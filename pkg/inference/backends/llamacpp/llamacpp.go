@@ -68,7 +68,7 @@ func New(
 ) (inference.Backend, error) {
 	// If no config is provided, use the default configuration
 	if conf == nil {
-		conf = NewDefaultLlamaCppConfig()
+		conf = NewDefaultLlamaCppConfigWithLogger(log)
 	}
 
 	return &llamaCpp{
