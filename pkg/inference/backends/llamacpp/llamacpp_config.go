@@ -143,7 +143,7 @@ func containsArg(args []string, arg string) bool {
 // When a user specifies any alias, it replaces the default for that canonical flag.
 var flagAliases = map[string][]string{
 	"-ngl":         {"-ngl", "--gpu-layers", "--n-gpu-layers"},
-	"--metrics":    {"--metrics", "--no-metrics"},
+	"--metrics":    {"--metrics"},
 	"--no-mmap":    {"--no-mmap", "--mmap"},
 	"--threads":    {"--threads", "-t"},
 }

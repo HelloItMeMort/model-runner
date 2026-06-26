@@ -450,7 +450,6 @@ func TestGetCanonicalFlag(t *testing.T) {
 		{"long flag --gpu-layers", "--gpu-layers", "-ngl"},
 		{"long flag --n-gpu-layers", "--n-gpu-layers", "-ngl"},
 		{"long flag --metrics", "--metrics", "--metrics"},
-		{"long flag --no-metrics", "--no-metrics", "--metrics"},
 		{"long flag --no-mmap", "--no-mmap", "--no-mmap"},
 		{"long flag --mmap", "--mmap", "--no-mmap"},
 		{"short flag -t", "-t", "--threads"},
@@ -625,9 +624,9 @@ func TestReplaceConflictingDefaults(t *testing.T) {
 			expected: []string{"--metrics"},
 		},
 		{
-			name:     "user flag replaces --metrics",
+			name:     "user flag --metrics replaces default",
 			defaults: []string{"-ngl", "999", "--metrics"},
-			user:     []string{"--no-metrics"},
+			user:     []string{"--metrics"},
 			expected: []string{"-ngl", "999"},
 		},
 		{
